@@ -3,6 +3,7 @@ package com.tsystems.graph.movie;
 import com.tsystems.graph.person.PersonSimpleResponse;
 import lombok.Builder;
 import lombok.Data;
+import lombok.EqualsAndHashCode;
 import lombok.NoArgsConstructor;
 
 import java.util.HashSet;
@@ -14,10 +15,15 @@ import static com.tsystems.graph.util.Utils.transformCollection;
 @Data
 public class MovieResponse extends MovieSimpleResponse {
 
+    @EqualsAndHashCode.Exclude
     private Set<PersonSimpleResponse> actors;
+    @EqualsAndHashCode.Exclude
     private Set<PersonSimpleResponse> directors;
+    @EqualsAndHashCode.Exclude
     private Set<PersonSimpleResponse> producers;
+    @EqualsAndHashCode.Exclude
     private Set<PersonSimpleResponse> writers;
+    @EqualsAndHashCode.Exclude
     private Set<PersonSimpleResponse> reviewers;
 
     @Builder(builderMethodName = "movieResponseBuilder")

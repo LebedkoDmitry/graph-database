@@ -21,12 +21,22 @@ public class PersonQueryService {
 
     @Transactional(readOnly = true)
     public Stream<Person> getAll() {
-        return stream(personRepository.findAll().spliterator(), false);
+        return stream(personRepository.findAll().spliterator(  ), false);
     }
 
     @Transactional(readOnly = true)
     public Optional<Person> getById(Long id) {
         return personRepository.findById(id);
+    }
+
+    @Transactional(readOnly = true)
+    public Stream<Person> getDirectors() {
+        return personRepository.getDirectors();
+    }
+
+    @Transactional(readOnly = true)
+    public Stream<Person> getProducers() {
+        return personRepository.getProducers();
     }
 
 }

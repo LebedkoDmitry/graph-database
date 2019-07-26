@@ -19,15 +19,25 @@ public class PersonQueryController {
         this.personQueryService = requireNonNull(personQueryService);
     }
 
-    @GetMapping(path = "/persons")
+    @GetMapping(path = "/person")
     public Collection<PersonResponse> getAll() {
         return personQueryService.getAll().map(PersonResponse::of).collect(toSet());
     }
 
-    @GetMapping(path = "/persons/{id}")
+    @GetMapping(path = "/person/{id}")
     public PersonResponse getById(@PathVariable(name = "id") Long id) {
         return PersonResponse.of(personQueryService.getById(id)
                 .orElseThrow(() -> new IllegalArgumentException(format("There is no person with the id %s", id))));
+    }
+
+    @GetMapping(path = "/person/producers")
+    public Collection<PersonResponse> getProducers() {
+        return personQueryService.getProducers().map(PersonResponse::of).collect(toSet());
+    }
+
+    @GetMapping(path = "/person/directors")
+    public Collection<PersonResponse> getDirectors() {
+        return personQueryService.getDirectors().map(PersonResponse::of).collect(toSet());
     }
 
 }
