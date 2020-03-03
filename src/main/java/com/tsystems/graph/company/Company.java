@@ -17,8 +17,8 @@ import org.neo4j.ogm.id.UuidStrategy;
 @Builder(builderMethodName = "companyBuilder")
 @Data
 @NodeEntity
-@JsonTypeInfo(use = JsonTypeInfo.Id.NAME, property = "type")
-@JsonTypeName("Company")
+//@JsonTypeInfo(use = JsonTypeInfo.Id.NAME, property = "type")
+//@JsonTypeName("Company")
 public class Company {
 
     @Id

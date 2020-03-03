@@ -8,6 +8,7 @@ import lombok.Data;
 import lombok.EqualsAndHashCode;
 import lombok.NoArgsConstructor;
 import lombok.ToString;
+import org.neo4j.ogm.annotation.NodeEntity;
 import org.neo4j.ogm.annotation.Relationship;
 
 import java.util.Set;
@@ -17,6 +18,7 @@ import java.util.Set;
 @Builder
 @Data
 @EqualsAndHashCode
+@NodeEntity
 public class Person {
 
     private Long id;

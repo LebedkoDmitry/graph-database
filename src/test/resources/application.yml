@@ -3,3 +3,7 @@ spring:
     neo4j:
       embedded:
         enabled: true
+logging:
+  level:
+    # Set Neo4j logging to audit queries to the database
+    org.neo4j.ogm.drivers: TRACE

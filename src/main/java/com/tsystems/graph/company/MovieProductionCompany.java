@@ -8,7 +8,7 @@ import org.neo4j.ogm.annotation.Property;
 
 @NoArgsConstructor
 @Data
-@JsonTypeName("MovieProductionCompany")
+//@JsonTypeName("MovieProductionCompany")
 public class MovieProductionCompany extends Company {
 
     @Property(name = "description")
